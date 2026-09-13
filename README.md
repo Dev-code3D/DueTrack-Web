@@ -1,120 +1,185 @@
-# DueTrack-Web
+# DueTrack
 
-DueTrack est une application Flutter de suivi des prêts et dettes personnels.
-Elle fonctionne sans compte ni connexion, ou avec un compte Google via Supabase
-optionnel,
-ligne. Les transactions, les statuts, les dates, les descriptions et les
-références de photos preuves sont gérés dans un repository unique afin de
-conserver une architecture simple à maintenir.
+[![GitHub Stars](https://img.shields.io/github/stars/Dev-code3D/duetrack?style=social)](https://github.com/Dev-code3D/duetrack/stargazers)
+[![Liberapay](https://img.shields.io/badge/Soutenir-Liberapay-yellow?style=flat-square)](https://liberapay.com/Octopi-Dev/)
+[![License](https://img.shields.io/badge/License-Propriétaire-blue)](https://github.com/Dev-code3D/duetrack)
 
-## Fonctionnalités
+## Table des matières
 
-- connexion Google et profil local hors ligne ;
-- stockage local persistant avec Hive CE (migration Drift/SQLite prévue derrière
-  les repositories, sans perte des données existantes) ;
-- ajout, modification, suppression et changement de statut des transactions ;
-- noms de personnes mémorisés par compte et proposés à la saisie ;
-- import des données locales vers un compte Google après confirmation ;
-- graphiques des transactions en cours : ratio des montants ou nombre ;
-- page de détail des statistiques par personne ;
-- synchronisation Google/local dans les deux directions avec fusion sans doublons ;
-- suppression séparée des données locales ou Google après trois confirmations ;
-- historique masquable et réouverture par glissement ;
-- thèmes violet, logo et personnalisés ;
-- modes appareil, clair, sombre et automatique de 7 h à 20 h ;
-- devises EUR, GBP, USD, CHF et devise personnalisée ;
-- export JSON lisible ou fichier `.duetrack` chiffré par mot de passe ;
-- import sur mobile, desktop et navigateur ;
-- interface disponible en français, anglais et allemand.
-- reprise automatique de la session Google ou du dernier profil local ;
-- données locales persistantes après fermeture prolongée de l’application.
+- [À propos](#-à-propos-de-duetrack)
+- [Pages web statiques](#-pages-web-statiques)
+- [Fonctionnalités](#-fonctionnalités-de-lapplication)
+- [Plateformes & démarrage](#-plateformes--démarrage)
+- [Architecture technique](#️-architecture-technique)
+- [Sécurité & données](#-sécurité--données)
+- [Contact & support](#-contact--support)
+- [Licence & mentions légales](#-licence--mentions-légales)
+- [Liens utiles](#-liens-utiles)
 
-Les photos preuves sont actuellement exportées sous forme de références de
-fichiers. Elles ne sont pas incorporées dans le JSON.
+---
 
-## Démarrage
+## 📌 À propos de DueTrack
 
-https://dev-code3d.github.io/DueTrack-Web/
+**DueTrack** est une application Flutter multiplateforme conçue pour suivre les prêts, dettes et transactions personnels de manière simple, privée et locale.
 
-## Plateformes
+Elle fonctionne sans compte ni connexion obligatoire, avec une option de synchronisation Google/Supabase pour ceux qui souhaitent une sauvegarde en ligne.
 
-Le projet cible Android, iOS, macOS, Windows, Linux et Web.
+**Points clés :**
+- **100% hors ligne** — vos données restent sur votre appareil par défaut
+- **Synchronisation explicite** — aucune action automatique, vous contrôlez quand et comment les données sont synchronisées
+- **Respect de la vie privée** — aucune collecte de données sans votre consentement explicite
+- **Multiplateforme** — Android, iOS, macOS, Windows, Linux et Web
 
-- Android/iOS/macOS/Windows/Linux : le sélecteur de fichiers natif est utilisé
-  pour importer et exporter.
-- Web et `flutter run -d web-server --web-port 3000` : l’export déclenche un
-  téléchargement navigateur ; l’import utilise le sélecteur de fichier Web.
-- Le stockage hors ligne Web repose sur le stockage persistant du navigateur.
-- Les navigateurs peuvent bloquer les téléchargements multiples ; autoriser
-  les téléchargements pour le domaine de l’application si nécessaire.
+---
 
-## Architecture
+## 🌐 Pages web statiques
 
-```text
+Ce dépôt contient les pages publiques de DueTrack, hébergées via GitHub Pages :
+
+| Page | Description | URL |
+|---|---|---|
+| Accueil | Présentation de l'application, fonctionnalités et FAQ | [/DueTrack-Web/](https://dev-code3d.github.io/DueTrack-Web/) |
+| Conditions d'utilisation | Termes et règles d'utilisation | [/DueTrack-Web/conditions.html](https://dev-code3d.github.io/DueTrack-Web/conditions.html) |
+| Politique de confidentialité | Comment vos données sont protégées | [/DueTrack-Web/confidentialite.html](https://dev-code3d.github.io/DueTrack-Web/confidentialite.html) |
+
+**Design :**
+- Style cohérent avec l'application (thème violet `#5a3db5`, jaune `#f4e229`, vert `#9fb14e`)
+- Responsive — adapté aux mobiles et ordinateurs
+- Mode sombre disponible
+
+---
+
+## 🚀 Fonctionnalités de l'application
+
+### 📱 Gestion des transactions
+- Ajout / modification / suppression de transactions (nom, montant, date, description, statut)
+- Noms mémorisés — les personnes sont enregistrées par compte et proposées à la saisie
+- Statistiques :
+  - Graphiques des transactions en cours (ratio des montants ou nombre)
+  - Page de détail des statistiques par personne
+- Historique — masquable et réouvrable par glissement
+
+### 🔐 Authentification & stockage
+- Profil local hors ligne — fonctionnement complet sans compte
+- Connexion Google (optionnelle) via Supabase pour la synchronisation
+- Stockage local persistant avec Hive CE (migration vers Drift/SQLite prévue)
+- Reprise automatique de la dernière session (Google ou profil local)
+- Données persistantes après fermeture prolongée de l'application
+
+### 🌍 Personnalisation
+- Thèmes — violet (par défaut), logo personnalisé, ou couleurs personnalisées
+- Modes d'affichage — appareil, clair, sombre, ou automatique (7h–20h)
+- Devises — EUR, GBP, USD, CHF, ou devise personnalisée
+- Langues — français, anglais, allemand
+
+### 📥 Import / Export
+- **Export :**
+  - Fichier JSON lisible (données brutes)
+  - Fichier `.duetrack` chiffré par mot de passe (sécurisé)
+- **Import :**
+  - Depuis mobile, desktop ou navigateur
+  - Fusion intelligente — pas de doublons, pas de suppression automatique
+
+> ⚠️ Les photos preuves sont exportées sous forme de références de fichiers (non incluses dans le JSON). Ne jamais publier un export dans le dépôt (contient des données personnelles).
+
+### ☁️ Synchronisation (optionnelle)
+- Double direction — synchronisation Google ↔ Local avec fusion sans doublons
+- Suppression sécurisée — confirmation en 3 étapes pour supprimer des données (locales ou Google)
+- **Sauvegardes en ligne :**
+  - Supabase personnel — synchronisation principale (OAuth + scopes minimaux)
+  - Google Drive ou GitHub privé — sauvegardes complémentaires (à venir)
+
+> ⚠️ Les jetons ne sont JAMAIS stockés dans les préférences ordinaires.
+
+---
+
+## 📱 Plateformes & démarrage
+
+| Plateforme | Fonctionnalités spécifiques | Lien |
+|---|---|---|
+| Android / iOS / macOS / Windows / Linux | Sélecteur de fichiers natif pour importer/exporter | [Dépôt principal](https://github.com/Dev-code3D/duetrack) |
+| Web | Stockage persistant du navigateur. Export via téléchargement, import via sélecteur de fichiers Web | [dev-code3d.github.io/DueTrack-Web/](https://dev-code3d.github.io/DueTrack-Web/) |
+| Serveur local | `flutter run -d web-server --web-port 3000` | [Documentation Flutter](https://docs.flutter.dev/platform-integration/web) |
+
+> ⚠️ **Note pour le Web** : les navigateurs peuvent bloquer les téléchargements multiples. Autorisez les téléchargements pour le domaine si nécessaire.
+
+---
+
+## 🏗️ Architecture technique
+
+```
 lib/
-  core/
-    localization/       Langues et sélecteur de langue
-    network/            État réseau et indicateur visuel
-    platform/           Abstraction import/export IO/Web
-    theme/              Thèmes et préférences d’apparence
-  data/
-    models/             Modèles de transactions
-    repositories/       Repositories Supabase et stockage local
-  features/
-    auth/               Google, profil local et changement de compte
-    home/               Navigation principale
-    transactions/       Liste, formulaire et détail
-    settings/           Préférences, import/export et compte
+├── core/
+│   ├── localization/       # Langues et sélecteur de langue
+│   ├── network/            # État réseau et indicateur visuel
+│   ├── platform/           # Abstraction import/export (IO/Web)
+│   └── theme/              # Thèmes et préférences d'apparence
+├── data/
+│   ├── models/             # Modèles de transactions
+│   └── repositories/       # Repositories Supabase et stockage local
+└── features/
+    ├── auth/               # Google, profil local et changement de compte
+    ├── home/               # Navigation principale
+    ├── transactions/       # Liste, formulaire et détail
+    └── settings/           # Préférences, import/export et compte
 ```
 
-Pour ajouter une langue : ajouter son `Locale` dans
-`core/localization/locale_provider.dart`, puis compléter son dictionnaire dans
-`app_localizations.dart`. Les widgets doivent utiliser `context.tr('cle')` et
-ne doivent pas contenir de texte d’interface en dur.
+**Ajouter une langue :**
+1. Ajouter le `Locale` dans `core/localization/locale_provider.dart`
+2. Compléter le dictionnaire dans `app_localizations.dart`
+3. Utiliser `context.tr('cle')` dans les widgets (pas de texte en dur)
 
-## Import et export
+---
 
-L’export contient, selon les options retenues, le profil, les transactions,
-les réglages d’interface et les préférences. Un mot de passe peut chiffrer le
-contenu dans un fichier `.duetrack`. Lors d’un import, l’utilisateur confirme
-l’ajout des transactions et le mot de passe n’est demandé que pour un fichier
-protégé.
+## 🔒 Sécurité & données
 
-Les données exportées peuvent contenir des informations personnelles. Les
-conserver dans un emplacement sécurisé et ne jamais les publier dans le dépôt.
+**Engagements :**
+- Aucune collecte de données depuis les pages statiques (GitHub Pages)
+- Stockage local par défaut — vos données restent sur votre appareil
+- Synchronisation explicite — vous devez confirmer manuellement chaque synchronisation
+- Transparence — toute fonctionnalité en ligne est documentée et nécessite votre accord
 
-## Sauvegardes en ligne facultatives
+**À ne pas faire :**
+- ❌ Commiter des secrets (clés API, tokens, fichiers `.env`)
+- ❌ Commiter des exports `.duetrack` ou JSON (contiennent des données personnelles)
+- ❌ Publier des données sensibles dans le dépôt
+- ❌ Ignorer les confirmations de suppression ou de synchronisation
 
-Le stockage local reste la source par défaut. Les sauvegardes distantes doivent
-être activées séparément et pourront être combinées : Supabase personnel pour
-la synchronisation principale, Google Drive ou un dépôt GitHub privé pour des
-copies de sauvegarde. Chaque fournisseur devra utiliser OAuth et des scopes
-minimaux ; les jetons ne doivent jamais être stockés dans les préférences
-ordinaires. Une sauvegarde GitHub transmet les données personnelles à GitHub,
-même si le dépôt est privé. Les premières sauvegardes en ligne sont manuelles
-afin d’éviter les conflits silencieux.
+> ⚠️ Une sauvegarde GitHub (même privée) transmet vos données à GitHub. Préférez Supabase personnel ou Google Drive pour les sauvegardes en ligne.
 
-Les dons sont indépendants des fonctionnalités et n’offrent aucun déblocage
-payant. Le lien configuré pour DueTrack est
-<https://liberapay.com/Octopi-Dev/>.
+---
 
-La synchronisation est volontairement explicite et non destructive : les
-transactions sont comparées avant fusion, les doublons détectables ne sont pas
-ajoutés et les données locales ne sont pas supprimées automatiquement.
+## 📧 Contact & support
 
-Le README peut aussi être consulté depuis **Paramètres > À propos > Lire le
-README**. Cette copie est embarquée dans l’application afin de rester
-disponible hors ligne.
+| Type | Lien |
+|---|---|
+| Email | [octopidev.contact@gmail.com](mailto:octopidev.contact@gmail.com) |
+| Soutenir le projet | [Liberapay — Octopi-Dev](https://liberapay.com/Octopi-Dev/) |
+| Code source | [github.com/Dev-code3D/duetrack](https://github.com/Dev-code3D/duetrack) |
+| Dépôt pages web | [github.com/Dev-code3D/DueTrack-Web](https://github.com/Dev-code3D/DueTrack-Web) |
 
-## Crédits
+> 💡 Les dons sont libres et ne débloquent aucune fonctionnalité (pas de modèle freemium).
 
-DueTrack (c) OctipiDev - All Rights Reserved
+---
 
-## Contact et informations légales
+## 📄 Licence & mentions légales
 
-Contact développeur : <mailto:octopidev.contact@gmail.com>
+- **Code source** — Propriétaire (voir [LICENSE](https://github.com/Dev-code3D/duetrack/blob/main/LICENSE) dans le dépôt principal)
+- **Nom et identité visuelle** — DueTrack et son logo sont protégés (© Octopi Dev)
+- **Données personnelles** — voir la [Politique de confidentialité](https://dev-code3d.github.io/DueTrack-Web/confidentialite.html)
+- **Conditions d'utilisation** — [Lire les conditions](https://dev-code3d.github.io/DueTrack-Web/conditions.html)
 
-Portail public de confidentialité et conditions d’utilisation :
-<https://dev-code3d.github.io/duetrack-conditions/>
+---
 
-Site de présentation : <https://sites.google.com/view/app-entmobileplus-by-assemdev/accueil/>
+## 🔗 Liens utiles
+
+| Ressource | URL |
+|---|---|
+| Application Web | [dev-code3d.github.io/DueTrack-Web/](https://dev-code3d.github.io/DueTrack-Web/) |
+| README embarqué | Disponible dans l'app via Paramètres > À propos > Lire le README (fonctionne hors ligne) |
+| Portail public | [sites.google.com/view/app-entmobileplus-by-assemdev](https://sites.google.com/view/app-entmobileplus-by-assemdev/accueil/) |
+| Documentation Flutter | [docs.flutter.dev](https://docs.flutter.dev) |
+
+---
+
+**© 2026 Octopi Dev** — Tous droits réservés.
