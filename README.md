@@ -43,7 +43,7 @@ Ce dépôt contient les pages publiques de DueTrack, hébergées via GitHub Page
 | Politique de confidentialité | Comment vos données sont protégées | [/DueTrack-Web/confidentialite.html](https://dev-code3d.github.io/DueTrack-Web/confidentialite.html) |
 
 **Design :**
-- Style cohérent avec l'application (thème violet `#5a3db5`, jaune `#f4e229`, vert `#9fb14e`)
+- Style cohérent avec l'application (thème teal `#3c797a`, violet `#5a3db5`, jaune `#f4e229`, vert `#9fb14e`)
 - Responsive — adapté aux mobiles et ordinateurs
 - Mode sombre disponible
 
