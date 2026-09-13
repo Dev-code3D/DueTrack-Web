@@ -125,6 +125,7 @@ a:not(.button):hover{text-decoration:underline}
 .balance small{display:block;color:var(--muted);margin-bottom:3px}
 .balance strong{font-size:1.7rem;letter-spacing:-.04em}
 .balance-green{background:#f2f6df}
+.balance-purple{background:#f2e8f6}
 .balance-primary{background:#e8f2f2}
 .mini-list{display:grid;grid-template-columns:1fr auto;gap:5px 15px;padding:14px 4px 0;color:var(--muted)}
 .mini-list b{color:var(--ink)}
@@ -223,4 +224,26 @@ body.dark .notice{background:#1f3536;color:var(--ink)!important}
     .privacy-callout{padding:35px 25px;margin-bottom:60px}
     .footer-grid{grid-template-columns:1fr}
     .footer-bottom{flex-direction:column;gap:6px}
+}
+/* Style pour les icônes Font Awesome/Bootstrap */
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 12px;
+  background: #f0ecff; /* Fond violet clair (comme dans ton style existant) */
+  color: var(--purple); /* Couleur violet principale */
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.feature-icon i {
+  font-size: 1.1rem; /* Taille légèrement ajustée pour les icônes */
+}
+
+/* Pour le mode sombre */
+body.dark .feature-icon {
+  background: #292342; /* Fond violet foncé */
+  color: #ddd7f7; /* Couleur texte claire */
 }
