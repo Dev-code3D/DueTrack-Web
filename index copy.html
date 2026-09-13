@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DueTrack, une application simple et privée pour suivre les prêts, dettes et transactions personnelles.">
+  <meta name="theme-color" content="#f4e229">
+  <title>DueTrack — Suivre. Comprendre. Régler.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="DueTrack, accueil">
+      <span class="brand-mark"><img src="assets/DueTrack_Icon.png" alt="" onerror="this.style.display='none'"></span>
+      <span>DueTrack</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#confidentialite">Confidentialité</a>
+      <a href="conditions.html">Conditions</a>
+      <a class="button button-small" href="https://github.com/Dev-code3D/duetrack" target="_blank" rel="noopener">Voir le projet</a>
+      <button id="theme-toggle" class="icon-button" type="button" aria-label="Activer le mode sombre">☾</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Simple • local • maîtrisé</p>
+        <h1>Les comptes clairs,<br><span>les relations préservées.</span></h1>
+        <p class="hero-lead">DueTrack aide à suivre ce que l’on doit et ce que l’on vous doit, sans transformer une petite dette en problème compliqué.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://dev-code3d.github.io/DueTrack-Web/" target="_blank" rel="noopener">Ouvrir la version Web</a>
+          <a class="button button-ghost" href="#confidentialite">Notre approche privée</a>
+        </div>
+        <p class="microcopy">Le mode local fonctionne sans compte et sans connexion.</p>
+      </div>
+      <div class="hero-card" aria-label="Aperçu de l'application">
+        <div class="card-top"><span class="status-dot"></span><span>Résumé en cours</span><span class="card-date">Aujourd’hui</span></div>
+        <div class="balance balance-green"><small>On me doit</small><strong>+ 245,00 €</strong></div>
+        <div class="balance balance-purple"><small>Je dois</small><strong>− 80,00 €</strong></div>
+        <div class="mini-list"><span>Camille</span><b>120,00 €</b><span>Alex</span><b>80,00 €</b></div>
+      </div>
+    </section>
+
+    <section id="fonctionnalites" class="section-shell section">
+      <div class="section-heading"><p class="eyebrow">Tout au même endroit</p><h2>Une app discrète pour les choses importantes.</h2><p>Du petit prêt entre proches aux dépenses partagées, DueTrack reste lisible et sous votre contrôle.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-icon">↔</span><h3>Suivre les transactions</h3><p>Ajoutez un nom, un montant, une date et une note. Marquez une transaction comme réglée quand le moment est venu.</p></article>
+        <article class="feature-card"><span class="feature-icon">⌁</span><h3>Voir les tendances</h3><p>Un résumé global et des statistiques par personne pour comprendre rapidement la situation.</p></article>
+        <article class="feature-card"><span class="feature-icon">▣</span><h3>Garder une preuve</h3><p>Ajoutez facultativement une ou plusieurs références de photo selon les possibilités de votre appareil.</p></article>
+        <article class="feature-card"><span class="feature-icon">◌</span><h3>Rester hors ligne</h3><p>Les profils locaux, les transactions et les réglages restent disponibles sans compte ni réseau.</p></article>
+        <article class="feature-card"><span class="feature-icon">⇅</span><h3>Importer et exporter</h3><p>Conservez une copie JSON ou un export protégé par mot de passe. Vous décidez où le fichier est enregistré.</p></article>
+        <article class="feature-card"><span class="feature-icon">✦</span><h3>Choisir son style</h3><p>Langue, mode clair ou sombre, couleur d’interface et devise : l’outil s’adapte à vos habitudes.</p></article>
+      </div>
+    </section>
+
+    <section class="split-section section-shell section">
+      <div><p class="eyebrow">Votre espace, vos choix</p><h2>Local par défaut.<br>En ligne seulement si vous le décidez.</h2></div>
+      <div class="split-copy"><p>DueTrack ne nécessite pas de compte pour commencer. Une synchronisation Supabase personnelle peut être configurée volontairement. Des sauvegardes Google Drive ou GitHub privé pourront être activées séparément lorsqu’elles sont disponibles dans la version utilisée.</p><p>Chaque service en ligne implique un transfert de données : l’application doit vous l’expliquer avant toute activation.</p></div>
+    </section>
+
+    <section id="confidentialite" class="privacy-callout section-shell section">
+      <div><p class="eyebrow">Transparence</p><h2>La confidentialité ne devrait pas être une option cachée.</h2><p>Nous expliquons quelles données restent sur l’appareil, lesquelles peuvent être envoyées à un service choisi par l’utilisateur et comment les supprimer.</p></div>
+      <a class="button button-light" href="confidentialite.html">Lire la politique complète</a>
+    </section>
+
+    <section class="section-shell section faq">
+      <div class="section-heading"><p class="eyebrow">Questions fréquentes</p><h2>Les réponses essentielles.</h2></div>
+      <details><summary>Dois-je créer un compte ?</summary><p>Non. Le profil local est le mode de départ. Un compte ou un service distant est facultatif.</p></details>
+      <details><summary>DueTrack lit-il mes comptes bancaires ?</summary><p>Non. L’application ne se connecte pas automatiquement à votre banque et ne collecte pas vos identifiants bancaires.</p></details>
+      <details><summary>Mes données sont-elles publiques sur GitHub Pages ?</summary><p>Non, une page GitHub Pages héberge le code Web, pas les données locales du navigateur. Ne publiez jamais un export utilisateur ou un secret dans le dépôt.</p></details>
+      <details><summary>Comment demander de l’aide ?</summary><p>Ouvrez une issue non sensible sur le dépôt public. Ne partagez jamais de clé, token, mot de passe ou export personnel dans une issue.</p></details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-grid">
+      <div><a class="brand" href="index.html"><span class="brand-mark"><img src="assets/DueTrack_Icon.png" alt="" onerror="this.style.display='none'"></span><span>DueTrack</span></a><p>Suivre les prêts et dettes, avec simplicité.</p></div>
+      <div><strong>Informations</strong><a href="confidentialite.html">Confidentialité</a><a href="conditions.html">Conditions d’utilisation</a><a href="https://github.com/Dev-code3D/duetrack" target="_blank" rel="noopener">Code source</a></div>
+      <div><strong>Soutenir le projet</strong><p>Un don est libre et ne débloque aucune fonctionnalité.</p><a href="https://liberapay.com/Octopi-Dev/" target="_blank" rel="noopener">Liberapay</a></div>
+    </div>
+    <div class="section-shell footer-bottom"><span>© <span data-year></span> Octopi Dev — Tous droits réservés.</span><span>DueTrack • Version Web</span></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
