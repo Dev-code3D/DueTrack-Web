@@ -1,47 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/DuTrack-Web/app/">
-
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="DueTrack - suivi simple des prêts, dettes et transactions.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="DueTrack">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DueTrack - Application de gestion de projets agile et suivi collaboratif des dettes, prêts et transactions pour équipes.">
+  <meta name="keywords" content="gestion de projets, suivi dettes, transactions, collaboration, agile, kanban, équipe">
+  <title>DueTrack - Gestion de Projets & Transactions Collaboratives</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png">
 
-  <title>DueTrack</title>
-  <link rel="manifest" href="manifest.json">
+  <!-- Open Graph (pour les partages sur les réseaux) -->
+  <meta property="og:title" content="DueTrack - Gestion de Projets Collaboratifs">
+  <meta property="og:description" content="Organisez vos projets et finances en équipe avec DueTrack.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dev-code3d.github.io/DueTrack-Web/">
+  <meta property="og:image" content="https://dev-code3d.github.io/DueTrack-Web/assets/screenshots/TransacScrenshotDT.png">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
 
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
-  <script src="flutter_bootstrap.js" async></script>
+<body>
+  <header>
+    <h1>DueTrack</h1>
+    <p>Gestion de projets et suivi des transactions, simplifiés pour les équipes</p>
+  </header>
+
+  <main>
+    <!-- Section Hero -->
+    <section>
+      <h2>Organisez vos projets et vos finances en équipe</h2>
+      <p class="tagline">
+        <strong>DueTrack</strong> est une application moderne conçue pour les équipes agiles.
+        Suivez vos tâches, gérez vos dettes et transactions, et collaborez en temps réel avec une interface intuitive.
+      </p>
+      <a href="/app" class="btn">Commencer avec DueTrack</a>
+    </section>
+
+    <!-- Section Fonctionnalités -->
+    <section>
+      <h2>🚀 Pourquoi choisir DueTrack ?</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>📋 Gestion de Projets Agile</h3>
+          <p>Créez, attribuez et suivez les tâches de votre équipe avec des tableaux Kanban intuitifs et personnalisables.</p>
+        </div>
+        <div class="feature">
+          <h3>💰 Suivi Financier Transparent</h3>
+          <p>Gérez les prêts, dettes et transactions entre membres de votre équipe de manière claire et sécurisée.</p>
+        </div>
+        <div class="feature">
+          <h3>👥 Collaboration en Temps Réel</h3>
+          <p>Travaillez ensemble avec des notifications instantanées, des commentaires et un historique complet des activités.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Capture d'écran -->
+    <section>
+      <h2>🖼️ Découvrez l'interface DueTrack</h2>
+      <img src="assets/screenshots/TransacScrenshotDT.png" alt="Capture d'écran de l'interface DueTrack montrant le suivi des transactions et projets" class="screenshot">
+      <p><em>Une interface épurée pour une gestion optimale</em></p>
+    </section>
+
+    <!-- Section CTA finale -->
+    <section>
+      <h2>Prêt à simplifier votre gestion ?</h2>
+      <p class="tagline">Rejoignez des milliers d'utilisateurs satisfaits dès aujourd'hui.</p>
+      <a href="/app" class="btn">Accéder à DueTrack</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 DueTrack. Tous droits réservés.</p>
+    <p>
+      <a href="https://dev-code3d.github.io/duetrack-conditions/" target="_blank" rel="noopener noreferrer">Conditions d'utilisation</a> |
+      <a href="https://dev-code3d.github.io/duetrack-conditions/" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>
+    </p>
+  </footer>
 </body>
-text
 </html>
