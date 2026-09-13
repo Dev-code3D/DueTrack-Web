@@ -34,17 +34,7 @@ fichiers. Elles ne sont pas incorporées dans le JSON.
 
 ## Démarrage
 
-```bash
-flutter pub get
-flutter run
-```
-
-`.env` est facultatif : l’application démarre en mode local même s’il est
-absent. Une instance Supabase self-hosted peut être configurée depuis
-**Paramètres > Configurer ma base Supabase**. Seule une URL HTTPS et une clé
-publishable/anon sont acceptées ; une clé `service_role` ne doit jamais être
-utilisée dans l’application. La configuration est conservée dans le stockage
-sécurisé natif (Keychain, Keystore ou coffre-fort de la plateforme).
+https://dev-code3d.github.io/DueTrack-Web/
 
 ## Plateformes
 
@@ -119,50 +109,6 @@ disponible hors ligne.
 ## Crédits
 
 DueTrack (c) OctipiDev - All Rights Reserved
-
-## Préparation des stores
-
-Le code Flutter et le build Web sont vérifiés localement, mais une publication
-store nécessite encore une configuration propre à l’éditeur :
-
-- remplacer `com.example.duetrack` par un identifiant Android/iOS/macOS unique ;
-- configurer une signature Android release et publier un `.aab` signé ;
-- configurer les certificats, profils et entitlements Apple ;
-- installer les toolchains Android et CocoaPods avant les builds finaux ;
-- configurer les clients OAuth Google pour chaque plateforme et domaine ;
-- publier une politique de confidentialité HTTPS et la renseigner dans chaque
-  console store ;
-- fournir un parcours de suppression complète du compte Google, incluant le
-  compte Supabase et les données associées, et pas seulement les transactions ;
-- compléter les formulaires Google Play Data safety, Apple App Privacy et les
-  déclarations d’export cryptographique ;
-- créer un paquet MSIX signé et vérifier ses capacités Windows.
-
-Les valeurs d’identifiant, certificats, URLs OAuth et URL de politique ne sont
-pas inventées dans le dépôt : elles doivent être fournies par l’éditeur.
-
-## Déploiement GitHub Pages
-
-Un dépôt GitHub Pages public peut héberger la version Web compilée.
-Une application Flutter Web peut être publique si elle ne contient aucun secret
-et si les règles RLS Supabase sont strictes. Les clés publishable/anon sont des
-clés clientes, mais elles ne remplacent jamais RLS ; une clé `service_role`,
-un token OAuth, une clé de signature ou un export utilisateur ne doit jamais
-être publié.
-
-Depuis le projet Flutter :
-
-```bash
-flutter build web --release --base-href "/DueTrack-Web/"
-```
-
-Publier ensuite le contenu de `build/web` dans ton dépôt GitHub Pages. Le dépôt
-source, le dépôt de publication et le dépôt privé de sauvegarde doivent rester
-séparés. Après activation de Pages, utiliser l’URL fournie par GitHub.
-
-Le script SQL complet est disponible dans `supabase/schema.sql`. Il crée la
-table `transactions`, ses contraintes, son index, son trigger de mise à jour et
-les politiques RLS par utilisateur.
 
 ## Contact et informations légales
 
