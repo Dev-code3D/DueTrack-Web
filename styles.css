@@ -132,7 +132,7 @@ a:not(.button):hover{text-decoration:underline}
 .balance small{display:block;color:var(--muted);margin-bottom:3px}
 .balance strong{font-size:1.7rem;letter-spacing:-.04em}
 .balance-green{background:#f2f6df}
-.balance-purple{background:#f2e8f6}
+.balance-purple{background:#796481}
 .balance-primary{background:#e8f2f2}
 .mini-list{display:grid;grid-template-columns:1fr auto;gap:5px 15px;padding:14px 4px 0;color:var(--muted)}
 .mini-list b{color:var(--ink)}
