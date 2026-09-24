@@ -58,6 +58,11 @@ a:not(.button):hover{text-decoration:underline}
     color:var(--muted);
 }
 .main-nav a:hover{color:var(--ink)}
+.header-controls{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
 .button{
     display:inline-flex;
     align-items:center;
@@ -81,7 +86,9 @@ a:not(.button):hover{text-decoration:underline}
 .button-light{background:#fff;color:var(--primary)}
 .icon-button,.menu-toggle{border:0;background:none;color:inherit;cursor:pointer;font:inherit}
 .icon-button{font-size:1.3rem}
+.icon-button i{font-size:1.1rem}
 .menu-toggle{display:none}
+.menu-toggle i{font-size:1.2rem}
 
 /* Hero */
 .hero{
