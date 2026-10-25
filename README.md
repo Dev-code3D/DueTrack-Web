@@ -166,8 +166,8 @@ lib/
 
 - **Code source** — Propriétaire (voir [LICENSE](https://github.com/Dev-code3D/duetrack/blob/main/LICENSE) dans le dépôt principal)
 - **Nom et identité visuelle** — DueTrack et son logo sont protégés (© Octopi Dev)
-- **Données personnelles** — voir la [Politique de confidentialité](https://dev-code3d.github.io/DueTrack-Web/confidentialite.html)
-- **Conditions d'utilisation** — [Lire les conditions](https://dev-code3d.github.io/DueTrack-Web/conditions.html)
+- **Données personnelles** — voir la [Politique de confidentialité](https://duetrack-web.vercel.app/confidentialite.html)
+- **Conditions d'utilisation** — [Lire les conditions](https://duetrack-web.vercel.app/conditions.html)
 
 ---
 
@@ -175,7 +175,8 @@ lib/
 
 | Ressource | URL |
 |---|---|
-| Application Web | [dev-code3d.github.io/DueTrack-Web/](https://dev-code3d.github.io/DueTrack-Web/) |
+| Application Repo | [dev-code3d.github.io/DueTrack-Web/](https://dev-code3d.github.io/DueTrack-Web/) |
+| Site Web | [duetrack-web.vercel.app](duetrack-web.vercel.app) |
 | README embarqué | Disponible dans l'app via Paramètres > À propos > Lire le README (fonctionne hors ligne) |
 | Portail public | [sites.google.com/view/app-entmobileplus-by-assemdev](https://sites.google.com/view/app-entmobileplus-by-assemdev/accueil/) |
 | Documentation Flutter | [docs.flutter.dev](https://docs.flutter.dev) |
