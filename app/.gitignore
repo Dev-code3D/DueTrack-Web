@@ -1,0 +1,19 @@
+# Flutter Web build output
+*.js
+*.js.map
+*.json
+
+# IDE/Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Canvaskit
+canvaskit/
+
+# Service worker
+flutter_service_worker.js
+
+# Version file
+version.json
