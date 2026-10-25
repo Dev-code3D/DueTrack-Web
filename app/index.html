@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- iOS meta tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <!-- DueTrack branding -->
+  <title>DueTrack App</title>
+  <link rel="icon" href="../public/assets/DueTrack_Icon.png" type="image/png">
+  <meta name="theme-color" content="#3c797a">
+  <meta name="description" content="DueTrack - Application de suivi de dettes et prêts">
+  
+  <!-- Flutter initialization -->
+  <script src="flutter.js" defer></script>
+</head>
+<body>
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+      }).then(function(engineInitializer) {
+        return engineInitializer.initializeEngine({
+          hostElement: document.body,
+        });
+      }).then(function(appRunner) {
+        return appRunner.runApp();
+      });
+    });
+  </script>
+</body>
+</html>

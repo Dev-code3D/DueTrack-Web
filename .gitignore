@@ -1,0 +1,30 @@
+# Flutter source (if in subfolder)
+# /flutter/
+
+# IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Flutter cache
+.dart_tool/
+
+# Local build outputs
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+Thumbs.db
+Thumbs.db:encryptable
+
+# Local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

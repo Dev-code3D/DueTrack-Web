@@ -1,14 +1,31 @@
 /* style.css */
 :root{
-    --ink:#17152b;
-    --muted:#68677a;
-    --paper:#fbfbf8;
-    --surface:#fff;
-    --line:#e9e8e0;
-    --primary:#3c797a;
-    --primary-dark:#274f50;
-    --yellow:#f4e229;
-    --green:#9fb14e;
+    /* Palette officielle DueTrack */
+    --primary:#3c797a;           /* Teal - Barre d'app, boutons, nav active */
+    --primary-dark:#274f50;      /* Teal foncé */
+    --primary-light:#e8f2f2;     /* Teal clair */
+    --positive:#9fb14e;          /* Olive - "On me doit", remboursé */
+    --positive-light:#f2f6df;    /* Olive très clair */
+    --positive-dark:#283128;     /* Olive foncé (mode sombre) */
+    --accent:#f4e229;            /* Jaune - Splash, badges deadline (avec parcimonie) */
+    --accent-light:#fff9e6;      /* Jaune très clair */
+    --negative:#c1652e;          /* Rouille - "Je dois" */
+    --negative-light:#f7f0ea;   /* Rouille très clair */
+    --negative-dark:#3a251a;     /* Rouille foncé (mode sombre) */
+    --surface-light:#f7f5ef;     /* Fond clair (ni blanc pur) */
+    --surface-dark:#1e2422;      /* Fond sombre (ni noir pur) */
+    
+    /* Couleurs de texte et UI */
+    --ink:#17152b;               /* Texte principal (mode clair) */
+    --ink-dark:#f6f5fb;          /* Texte principal (mode sombre) */
+    --muted:#68677a;             /* Texte secondaire (mode clair) */
+    --muted-dark:#b0b8b7;        /* Texte secondaire (mode sombre) */
+    --paper:#fbfbf8;             /* Fond de page (mode clair) */
+    --paper-dark:#11181a;        /* Fond de page (mode sombre) */
+    --surface:#fff;              /* Surface (mode clair) */
+    --surface-dark-mode:#1b2426;/* Surface (mode sombre) */
+    --line:#e9e8e0;              /* Bordures/lignes (mode clair) */
+    --line-dark:#2d3739;        /* Bordures/lignes (mode sombre) */
     --shadow:0 24px 70px rgba(30,45,45,.12);
 }
 *{box-sizing:border-box}
@@ -45,11 +62,13 @@ a:not(.button):hover{text-decoration:underline}
     place-items:center;
     width:34px;
     height:34px;
-    border-radius:12px;
-    background:linear-gradient(145deg,var(--yellow),var(--green));
+    border-radius:50%;
+    background:var(--surface);
+    padding:2px;
+    box-shadow:0 0 8px rgba(60,121,122,0.5),0 0 16px rgba(159,177,78,0.3);
     overflow:hidden;
 }
-.brand-mark img{width:100%;height:100%;object-fit:cover}
+.brand-mark img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .main-nav{
     display:flex;
     align-items:center;
@@ -84,11 +103,20 @@ a:not(.button):hover{text-decoration:underline}
 .button-small{min-height:38px;padding-inline:15px;font-size:.86rem}
 .button-ghost{background:transparent;color:var(--primary);border:1px solid #cfe3e3;box-shadow:none}
 .button-light{background:#fff;color:var(--primary)}
-.icon-button,.menu-toggle{border:0;background:none;color:inherit;cursor:pointer;font:inherit}
+.icon-button,.menu-toggle{border:0;background:none;color:inherit;cursor:pointer;font:inherit;transition:transform .2s}
 .icon-button{font-size:1.3rem}
 .icon-button i{font-size:1.1rem}
+.icon-button:hover{transform:scale(1.1)}
 .menu-toggle{display:none}
 .menu-toggle i{font-size:1.2rem}
+
+/* Style spécifique pour le bouton de thème */
+#theme-toggle{
+    color:var(--primary);
+}
+#theme-toggle i{
+    font-size:1.2rem;
+}
 
 /* Hero */
 .hero{
@@ -106,6 +134,10 @@ a:not(.button):hover{text-decoration:underline}
     font-weight:800;
     color:var(--primary);
     margin:0 0 16px;
+    padding:4px 8px;
+    background:rgba(60,121,122,0.1);
+    border-radius:6px;
+    display:inline-block;
 }
 .hero h1{
     font-size:clamp(2.8rem,6vw,5.7rem);
@@ -126,14 +158,14 @@ a:not(.button):hover{text-decoration:underline}
     transform:rotate(2deg);
 }
 .card-top{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.85rem;margin-bottom:25px}
-.status-dot{width:9px;height:9px;background:var(--green);border-radius:50%}
+.status-dot{width:9px;height:9px;background:var(--positive);border-radius:50%}
 .card-date{margin-left:auto;font-size:.75rem}
 .balance{border-radius:18px;padding:18px;margin:12px 0}
 .balance small{display:block;color:var(--muted);margin-bottom:3px}
 .balance strong{font-size:1.7rem;letter-spacing:-.04em}
-.balance-green{background:#f2f6df}
-.balance-purple{background:#796481}
-.balance-primary{background:#e8f2f2}
+.balance-green{background:var(--positive-light);color:var(--ink)}
+.balance-negative{background:var(--negative-light);color:var(--ink)}
+.balance-primary{background:var(--primary-light);color:var(--primary)}
 .mini-list{display:grid;grid-template-columns:1fr auto;gap:5px 15px;padding:14px 4px 0;color:var(--muted)}
 .mini-list b{color:var(--ink)}
 
@@ -160,7 +192,7 @@ a:not(.button):hover{text-decoration:underline}
     width:39px;
     height:39px;
     border-radius:12px;
-    background:#e8f2f2;
+    background:var(--primary-light);
     color:var(--primary);
     font-weight:800;
     font-size:1.2rem;
@@ -180,7 +212,7 @@ a:not(.button):hover{text-decoration:underline}
     padding:60px;
     margin-bottom:90px;
 }
-.privacy-callout .eyebrow{color:var(--yellow)}
+.privacy-callout .eyebrow{color:var(--accent)}
 .privacy-callout p{color:#d9ecec;max-width:650px}
 .faq details{border-top:1px solid var(--line);padding:20px 0}
 .faq details:last-child{border-bottom:1px solid var(--line)}
@@ -188,27 +220,29 @@ summary{cursor:pointer;font-weight:700}
 .faq details p{color:var(--muted);max-width:720px}
 
 /* Footer */
-.site-footer{background:#12211f;color:#d7e6e5;padding:55px 0 20px}
+.site-footer{background:var(--surface-dark);color:var(--ink-dark);padding:55px 0 20px}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
-.footer-grid .brand{color:#fff}
-.footer-grid p{color:#a3bdba;font-size:.9rem}
-.footer-grid strong{display:block;color:#fff;margin-bottom:12px}
-.footer-grid a:not(.brand){display:block;color:#a3bdba;margin:5px 0;font-size:.9rem}
-.footer-bottom{border-top:1px solid #2b3e3c;margin-top:45px;padding-top:18px;display:flex;justify-content:space-between;color:#a3bdba;font-size:.78rem}
+.footer-grid .brand{color:var(--ink-dark)}
+.footer-grid p{color:var(--muted-dark);font-size:.9rem}
+.footer-grid strong{display:block;color:var(--ink-dark);margin-bottom:12px}
+.footer-grid a:not(.brand){display:block;color:var(--muted-dark);margin:5px 0;font-size:.9rem}
+.footer-bottom{border-top:1px solid var(--line-dark);margin-top:45px;padding-top:18px;display:flex;justify-content:space-between;color:var(--muted-dark);font-size:.78rem}
 
 /* Dark Mode */
 body.dark{
-    --ink:#f6f5fb;
-    --muted:#b0b8b7;
-    --paper:#11181a;
-    --surface:#1b2426;
-    --line:#2d3739;
+    --ink:var(--ink-dark);
+    --muted:var(--muted-dark);
+    --paper:var(--paper-dark);
+    --surface:var(--surface-dark-mode);
+    --line:var(--line-dark);
     --shadow:0 24px 70px rgba(0,0,0,.25);
+    --primary-light:var(--primary-dark);
 }
-body.dark .balance-green{background:#283128}
-body.dark .balance-primary{background:#1f3536}
-body.dark .feature-icon{background:#1f3536}
-body.dark .notice{background:#1f3536;color:var(--ink)!important}
+body.dark .balance-green{background:var(--positive-dark);color:var(--ink-dark)}
+body.dark .balance-negative{background:var(--negative-dark);color:var(--ink-dark)}
+body.dark .balance-primary{background:var(--primary-dark);color:var(--ink-dark)}
+body.dark .feature-icon{background:var(--primary-dark);color:var(--accent)}
+body.dark .notice{background:var(--primary-dark);color:var(--ink)!important}
 
 /* Mobile */
 @media(max-width:800px){
@@ -231,26 +265,4 @@ body.dark .notice{background:#1f3536;color:var(--ink)!important}
     .privacy-callout{padding:35px 25px;margin-bottom:60px}
     .footer-grid{grid-template-columns:1fr}
     .footer-bottom{flex-direction:column;gap:6px}
-}
-/* Style pour les icônes Font Awesome/Bootstrap */
-.feature-icon {
-  display: grid;
-  place-items: center;
-  width: 39px;
-  height: 39px;
-  border-radius: 12px;
-  background: #f0ecff; /* Fond violet clair (comme dans ton style existant) */
-  color: var(--purple); /* Couleur violet principale */
-  font-weight: 800;
-  font-size: 1.2rem;
-}
-
-.feature-icon i {
-  font-size: 1.1rem; /* Taille légèrement ajustée pour les icônes */
-}
-
-/* Pour le mode sombre */
-body.dark .feature-icon {
-  background: #292342; /* Fond violet foncé */
-  color: #ddd7f7; /* Couleur texte claire */
 }

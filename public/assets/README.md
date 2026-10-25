@@ -20,7 +20,7 @@ conserver une architecture simple à maintenir.
 - synchronisation Google/local dans les deux directions avec fusion sans doublons ;
 - suppression séparée des données locales ou Google après trois confirmations ;
 - historique masquable et réouverture par glissement ;
-- thèmes violet, logo et personnalisés ;
+- thèmes teal, logo et personnalisés ;
 - modes appareil, clair, sombre et automatique de 7 h à 20 h ;
 - devises EUR, GBP, USD, CHF et devise personnalisée ;
 - export JSON lisible ou fichier `.duetrack` chiffré par mot de passe ;
