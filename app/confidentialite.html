@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Politique de confidentialité de DueTrack - Application de suivi des prêts et dettes">
+    <meta name="google-site-verification" content="TO_CHANGE_WITH_GOOGLE_VERIFICATION_CODE">
+    <title>Confidentialité - DueTrack</title>
+    <style>
+        :root {
+            --primary-color: #9fb14e;
+            --background-color: #ffffff;
+            --text-color: #212121;
+            --card-bg: #f5f5f5;
+            --border-color: #e0e0e0;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #121212;
+                --text-color: #e0e0e0;
+                --card-bg: #1e1e1e;
+                --border-color: #333333;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+        
+        h3 {
+            color: var(--text-color);
+            font-size: 1.2em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px auto;
+            border-radius: 20px;
+        }
+        
+        .last-updated {
+            color: var(--text-color);
+            opacity: 0.7;
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        strong {
+            color: var(--primary-color);
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .important {
+            background-color: rgba(255, 200, 200, 0.2);
+            border-left: 4px solid #ff6b6b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .important dark-mode {
+            background-color: rgba(255, 100, 100, 0.1);
+        }
+        
+        .contact {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 5px 10px;
+            font-size: 0.9em;
+        }
+        
+        .language-selector a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            section {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <a href="confidentialite.html">FR</a> |
+        <a href="confidentiality.html">EN</a> |
+        <a href="datenschutz.html">DE</a>
+    </div>
+    
+    <header>
+        <img src="DueTrack_Icon.png" alt="DueTrack Logo" class="logo" onerror="this.style.display='none'">
+        <h1>Politique de Confidentialité</h1>
+        <h2>DueTrack - Suivi des Prêts et Dettes</h2>
+        <p>OctopiDev</p>
+        <p class="last-updated">Dernière mise à jour : 25 Octobre 2026</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>📜 Introduction</h2>
+            <p>
+                Bienvenue sur DueTrack, une application conçue pour vous aider à suivre vos prêts et dettes
+                entre proches de manière simple et sécurisée. chez OctopiDev, nous prenons la protection
+                de vos données très au sérieux.
+            </p>
+            <p>
+                Cette politique de confidentialité explique comment nous collectons, utilisons, divisuons
+                et protégeons vos informations.
+            </p>
+        </section>
+
+        <section>
+            <h2>🔒 Nos Principes Fondamentaux</h2>
+            <div class="important">
+                <p><strong>Nous ne collectons PAS vos données personnelles.</strong></p>
+                <p>DueTrack est conçue selon la philosophie <strong>"User First - Local First - Privacy First"</strong>.</p>
+            </div>
+            
+            <h3>Nos engagements :</h3>
+            <ul>
+                <li><strong>Local First</strong> : Toutes vos données sont stockées localement sur votre appareil par défaut.</li>
+                <li><strong>Pas de collecte de données</strong> : OctopiDev ne collecte, ne stocke et ne vend AUCUNE de vos données.</li>
+                <li><strong>Chiffrement</strong> : Vos exports de données sont chiffrés pour une protection maximale.</li>
+                <li><strong>Transparence</strong> : Vous savez toujours où vos données sont stockées.</li>
+                <li><strong>Contrôle total</strong> : Vous pouvez supprimer toutes vos données à tout moment.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📊 Quelles données sont impliquées ?</h2>
+            
+            <h3>1. Données que VOUS créez :</h3>
+            <ul>
+                <li><strong>Transactions</strong> : Noms, montants, dates, descriptions, statuts.</li>
+                <li><strong>Profils</strong> : Noms des profils que vous créez.</li>
+                <li><strong>Préférences</strong> : Thème, langue, devise, paramètres d'affichage.</li>
+            </ul>
+            
+            <h3>2. Données d'authentification (si vous choisissez de vous connecter) :</h3>
+            <ul>
+                <li><strong>Email</strong> : Votre adresse email (uniquement si vous utilisez l'authentification Google).</li>
+                <li><strong>ID utilisateur</strong> : Identifiant unique généré par le fournisseur d'authentification.</li>
+                <li><strong>Token d'authentification</strong> : Jetons sécurisés pour maintenir votre session.</li>
+            </ul>
+            
+            <p>
+                ⚠️ <strong>Important</strong> : Ces données d'authentification ne sont PAS stockées par OctopiDev.
+                Elles sont gérées par :
+            </p>
+            <ul>
+                <li><strong>Google</strong> : Si vous utilisez la connexion Google, vos informations sont gérées par Google selon <a href="https://policies.google.com/privacy" target="_blank">leur politique de confidentialité</a>.</li>
+                <li><strong>Supabase</strong> : Si vous configurez un backend Supabase personnel, vos données sont stockées sur VOS serveurs Supabase, pas les nôtres.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>💾 Où vos données sont-elles stockées ?</h2>
+            
+            <h3>1. Stockage Local (par défaut) :</h3>
+            <ul>
+                <li>Toutes vos données sont stockées <strong>localement sur votre appareil</strong>.</li>
+                <li>Utilisation de <strong>Hive</strong>, une base de données locale sécurisée.</li>
+                <li>Les données ne quittent JAMAIS votre appareil sans votre consentement explicite.</li>
+                <li>Fonctionne à 100% <strong>sans connexion Internet</strong>.</li>
+            </ul>
+            
+            <h3>2. Synchronisation Cloud (optionnelle) :</h3>
+            <ul>
+                <li>
+                    <strong>Supabase Personnel</strong> : Si vous configurez votre propre backend Supabase,
+                    vos données peuvent être synchronisées avec VOS serveurs.
+                    <ul>
+                        <li>Vous devez <strong>vous-même</strong> créer et configurer le projet Supabase.</li>
+                        <li>OctopiDev n'a <strong>AUCUN</strong> accès à vos serveurs Supabase.</li>
+                        <li>Vous contrôlez complètement vos données.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Google Drive Backup</strong> : Vous pouvez sauvegarder vos données dans votre Google Drive.
+                    <ul>
+                        <li>Les sauvegardes sont stockées dans un dossier <code>duetrack_backup</code>.</li>
+                        <li>Les fichiers sont <strong>chiffrés</strong> avec un mot de passe que VOUS choisissez.</li>
+                        <li>Seul vous pouvez accéder à ces sauvegardes.</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>3. Export de Données :</h3>
+            <ul>
+                <li>Vous pouvez exporter vos données en fichier JSON.</li>
+                <li>Les exports peuvent être <strong>chiffrés avec un mot de passe</strong>.</li>
+                <li>Vous êtes responsable de la sécurisation de ces fichiers exportés.</li>
+                <li>Ces fichiers sont stockés <strong>uniquement sur vos appareils</strong>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🚫 Ce que nous NE faisons PAS</h2>
+            <div class="important">
+                <p>OctopiDev et l'application DueTrack <strong>ne font PAS</strong> :</p>
+            </div>
+            <ul>
+                <li><strong>Collecter</strong> vos données personnelles ou de transaction.</li>
+                <li><strong>Vendre</strong> vos données à des tiers.</li>
+                <li><strong>Analyser</strong> vos données pour du marketing ou de la publicité.</li>
+                <li><strong>Partager</strong> vos données avec qui que ce soit sans votre consentement.</li>
+                <li><strong>Accéder</strong> à vos données stockées sur votre appareil ou vos services cloud personnels.</li>
+                <li><strong>Stocker</strong> vos données sur nos serveurs (nous n'avons PAS de backend pour vos données).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🔄 Partage de Données (avec votre consentement)</h2>
+            
+            <p>
+                Dans de rares cas, vous pourriez choisir de partager des informations avec nous :
+            </p>
+            
+            <h3>1. Rapports de Bugs :</h3>
+            <ul>
+                <li>Si vous signalez un bug, vous pourriez nous fournir :</li>
+                <ul>
+                    <li>Des captures d'écran (sans données personnelles).</li>
+                    <li>Les étapes pour reproduire le bug.</li>
+                    <li>Les logs d'erreur (sans données sensibles).</li>
+                </ul>
+                <li>Ces informations sont utilisées <strong>uniquement</strong> pour résoudre le problème.</li>
+            </ul>
+            
+            <h3>2. Suggestions de Fonctionnalités :</h3>
+            <ul>
+                <li>Vous pouvez nous envoyer des suggestions pour améliorer l'application.</li>
+                <li>Ces suggestions ne contiennent <strong>aucune</strong> de vos données personnelles.</li>
+            </ul>
+            
+            <h3>3. Donations :</h3>
+            <ul>
+                <li>Si vous choisissez de soutenir le développement via <a href="https://liberapay.com/Octopi-Dev/" target="_blank">Liberapay</a>,</li>
+                <li>les informations de paiement sont gérées par Liberapay selon <a href="https://liberapay.com/about/" target="_blank">leur politique</a>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🗝️ Sécurité de vos Données</h2>
+            
+            <h3>Mesures de Protection :</h3>
+            <ul>
+                <li><strong>Stockage Local Sécurisé</strong> : Utilisation de Hive, une base de données chiffrée.</li>
+                <li><strong>Chiffrement des Exports</strong> : AES-256 pour les sauvegardes chiffrées.</li>
+                <li><strong>Authentification Sécurisée</strong> : OAuth 2.0 avec Google.</li>
+                <li><strong>Row Level Security (RLS)</strong> : Sur Supabase, chaque utilisateur ne peut accéder qu'à SES propres données.</li>
+                <li><strong> Pas de clé service_role</strong> : Notre application n'utilise JAMAIS de clé administrative.</li>
+            </ul>
+            
+            <h3>Vos Responsabilités :</h3>
+            <ul>
+                <li>Protéger votre appareil avec un code PIN/mot de passe.</li>
+                <li>Ne pas partager votre appareil avec des personnes non fiables.</li>
+                <li>Sauvegarder régulièrement vos données (export ou Google Drive).</li>
+                <li>Choisir un mot de passe fort pour les exports chiffrés.</li>
+                <li>Garder votre clé Supabase secrète si vous en configurez une.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🗑️ Suppression de vos Données</h2>
+            
+            <p>
+                Vous avez le <strong>contrôle total</strong> sur vos données. Voici comment les supprimer :
+            </p>
+            
+            <h3>1. Supprimer les Données Locales :</h3>
+            <ol>
+                <li>Ouvrez l'application DueTrack.</li>
+                <li>Allez dans <strong>Paramètres → Supprimer les données locales</strong>.</li>
+                <li>Confirmez 3 fois pour supprimer toutes vos données locales.</li>
+            </ol>
+            
+            <h3>2. Supprimer les Données Cloud (Supabase) :</h3>
+            <ol>
+                <li>Ouvrez l'application DueTrack.</li>
+                <li>Allez dans <strong>Paramètres → Supprimer les données cloud</strong>.</li>
+                <li>Confirmez pour supprimer toutes vos données de votre backend Supabase.</li>
+            </ol>
+            
+            <h3>3. Supprimer votre Compte Supabase :</h3>
+            <ol>
+                <li>Ouvrez l'application DueTrack.</li>
+                <li>Allez dans <strong>Paramètres → Supprimer mon compte</strong>.</li>
+                <li>Confirmez pour supprimer votre compte utilisateur et toutes vos données associées.</li>
+                <li>Note : Cela ne supprime que les données de VOTRE projet Supabase, pas l'application elle-même.</li>
+            </ol>
+            
+            <h3>4. Supprimer les Sauvegardes Google Drive :</h3>
+            <ol>
+                <li>Ouvrez <a href="https://drive.google.com/" target="_blank">Google Drive</a>.</li>
+                <li>Cherchez le dossier <code>duetrack_backup</code>.</li>
+                <li>Supprimez manuellement le dossier et son contenu.</li>
+            </ol>
+            
+            <h3>5. Désinstaller l'Application :</h3>
+            <ol>
+                <li>Désinstallez l'application depuis votre appareil.</li>
+                <li><strong>Note</strong> : Vos données locales seront également supprimées.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>📜 Modifications de cette Politique</h2>
+            
+            <p>
+                Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment.
+                Les modifications seront publiées sur cette page avec une date de mise à jour.
+            </p>
+            <p>
+                Nous vous encourageons à consulter cette page régulièrement pour rester informé de
+                nos pratiques en matière de protection des données.
+            </p>
+        </section>
+
+        <section>
+            <h2>📞 Contact</h2>
+            
+            <p>
+                Si vous avez des questions concernant cette politique de confidentialité ou la gestion
+                de vos données, vous pouvez nous contacter à :
+            </p>
+            
+            <p style="text-align: center; margin: 20px 0;">
+                <strong>Email :</strong> <a href="mailto:octopidev.contact@gmail.com">octopidev.contact@gmail.com</a><br>
+                <strong>Site Web :</strong> <a href="https://duetrack-web.vercel.app/" target="_blank">https://duetrack-web.vercel.app/</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="contact">
+        <p>
+            © 2026 DueTrack - Développé par OctopiDev | Tous droits réservés
+        </p>
+        <p>
+            <a href="conditions.html">Conditions d'Utilisation</a> | 
+            Politique de Confidentialité
+        </p>
+    </footer>
+</body>
+</html>
