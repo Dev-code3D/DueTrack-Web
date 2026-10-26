@@ -14,7 +14,7 @@
     --negative-dark:#3a251a;     /* Rouille foncé (mode sombre) */
     --surface-light:#f7f5ef;     /* Fond clair (ni blanc pur) */
     --surface-dark:#1e2422;      /* Fond sombre (ni noir pur) */
-    
+
     /* Couleurs de texte et UI */
     --ink:#17152b;               /* Texte principal (mode clair) */
     --ink-dark:#f6f5fb;          /* Texte principal (mode sombre) */
@@ -109,14 +109,8 @@ a:not(.button):hover{text-decoration:underline}
 .icon-button:hover{transform:scale(1.1)}
 .menu-toggle{display:none}
 .menu-toggle i{font-size:1.2rem}
-
-/* Style spécifique pour le bouton de thème */
-#theme-toggle{
-    color:var(--primary);
-}
-#theme-toggle i{
-    font-size:1.2rem;
-}
+#theme-toggle{color:var(--primary)}
+#theme-toggle i{font-size:1.2rem}
 
 /* Hero */
 .hero{
@@ -221,12 +215,27 @@ summary{cursor:pointer;font-weight:700}
 
 /* Footer */
 .site-footer{background:var(--surface-dark);color:var(--ink-dark);padding:55px 0 20px}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.footer-grid{display:grid;grid-template-columns:1.4fr auto 1fr 1fr;gap:40px;align-items:start}
 .footer-grid .brand{color:var(--ink-dark)}
 .footer-grid p{color:var(--muted-dark);font-size:.9rem}
 .footer-grid strong{display:block;color:var(--ink-dark);margin-bottom:12px}
 .footer-grid a:not(.brand){display:block;color:var(--muted-dark);margin:5px 0;font-size:.9rem}
 .footer-bottom{border-top:1px solid var(--line-dark);margin-top:45px;padding-top:18px;display:flex;justify-content:space-between;color:var(--muted-dark);font-size:.78rem}
+
+/* QR Code */
+.qr-code-footer{text-align:center}
+.qr-trigger{display:inline-flex;flex-direction:column;align-items:center;gap:8px;padding:0;border:0;background:transparent;color:inherit;font:inherit;font-size:.82rem;cursor:pointer}
+.qr-trigger img{display:block;width:120px;height:120px;object-fit:contain;border-radius:8px;background:#fff;padding:6px;transition:transform .2s}
+.qr-trigger:hover img,.qr-trigger:focus-visible img{transform:scale(1.04)}
+.qr-trigger:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:8px}
+.qr-modal{width:min(360px,calc(100% - 32px));padding:0;border:0;border-radius:24px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.qr-modal::backdrop{background:rgba(10,20,20,.6);backdrop-filter:blur(4px)}
+.qr-modal-card{position:relative;padding:32px 28px 28px;text-align:center}
+.qr-modal-card h2{margin:0 0 16px;font-size:1.3rem}
+.qr-modal-card img{display:block;width:100%;max-width:260px;height:auto;margin:0 auto 14px;padding:10px;border-radius:12px;background:#fff}
+.qr-modal-card p{margin:0 0 18px;color:var(--muted);font-size:.9rem}
+.qr-modal-close{position:absolute;top:10px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:inherit;font-size:1.6rem;line-height:1;cursor:pointer}
+.qr-modal-close:hover{background:rgba(127,127,127,.15)}
 
 /* Dark Mode */
 body.dark{
@@ -256,6 +265,12 @@ body.dark .notice{background:var(--primary-dark);color:var(--ink)!important}
     .privacy-callout{align-items:flex-start;flex-direction:column}
     .footer-grid{grid-template-columns:1fr 1fr}
     .footer-grid>div:first-child{grid-column:1/-1}
+    /* le QR passe sous la marque, avant Légales */
+    .qr-code-footer{grid-column:1/-1}
+}
+@media(max-width:640px){
+    .qr-modal{padding:1rem}
+    .qr-trigger img{width:60px;height:60px}
 }
 @media(max-width:520px){
     .section-shell,.site-header{width:min(100% - 28px,1120px)}
@@ -265,55 +280,5 @@ body.dark .notice{background:var(--primary-dark);color:var(--ink)!important}
     .privacy-callout{padding:35px 25px;margin-bottom:60px}
     .footer-grid{grid-template-columns:1fr}
     .footer-bottom{flex-direction:column;gap:6px}
-}
-
-/* QR Code styles */
-#qr-code-footer {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-#qr-modal {
-    backdrop-filter: blur(4px);
-}
-
-#qr-modal img {
-    max-width: 100%;
-    height: auto;
-}
-
-@media (max-width: 640px) {
-    #qr-modal {
-        padding: 1rem;
-    }
-    #qr-code-footer {
-        width: 60px !important;
-        height: 60px !important;
-    }
-}
-
-.footer-grid{display:grid;grid-template-columns:1.4fr auto 1fr 1fr;gap:40px;align-items:start}
-
-.qr-code-footer{text-align:center}
-.qr-trigger{display:inline-flex;flex-direction:column;align-items:center;gap:8px;padding:0;border:0;background:transparent;color:inherit;font:inherit;font-size:.82rem;cursor:pointer}
-.qr-trigger img{display:block;width:120px;height:120px;object-fit:contain;border-radius:8px;background:#fff;padding:6px;transition:transform .2s}
-.qr-trigger:hover img,.qr-trigger:focus-visible img{transform:scale(1.04)}
-.qr-trigger:focus-visible{outline:2px solid var(--yellow);outline-offset:4px;border-radius:8px}
-
-.qr-modal{width:min(360px,calc(100% - 32px));padding:0;border:0;border-radius:24px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
-.qr-modal::backdrop{background:rgba(10,20,20,.6);backdrop-filter:blur(4px)}
-.qr-modal-card{position:relative;padding:32px 28px 28px;text-align:center}
-.qr-modal-card h2{margin:0 0 16px;font-size:1.3rem}
-.qr-modal-card img{display:block;width:100%;max-width:260px;height:auto;margin:0 auto 14px;padding:10px;border-radius:12px;background:#fff}
-.qr-modal-card p{margin:0 0 18px;color:var(--muted);font-size:.9rem}
-.qr-modal-close{position:absolute;top:10px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:inherit;font-size:1.6rem;line-height:1;cursor:pointer}
-.qr-modal-close:hover{background:rgba(127,127,127,.15)}
-
-@media(max-width:800px){
-  /* garde tes règles actuelles et ajoute : */
-  .qr-code-footer{grid-column:1/-1}      /* le QR passe sous la marque, avant Légales */
-}
-@media(max-width:520px){
-  .qr-trigger img{width:96px;height:96px}
+    .qr-trigger img{width:96px;height:96px}
 }
