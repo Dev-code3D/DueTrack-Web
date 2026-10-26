@@ -140,21 +140,13 @@
       </div>
 
       <!-- QR Code -->
-      <div class="qr-code-footer" style="text-align:center;">
-        <button type="button" onclick="openQrModal()" aria-label="Agrandir le QR code DueTrack" style="display:inline-flex;flex-direction:column;align-items:center;gap:8px;padding:0;border:0;background:transparent;color:inherit;cursor:pointer;">
-          <img src="assets/duetrak_page-qrV1.svg" alt="QR Code du site DueTrack" loading="lazy" style="display:block;width:120px;height:120px;object-fit:contain;border-radius:8px;background:#fff;padding:6px;">
+      <div class="qr-code-footer">
+        <button type="button" class="qr-trigger" data-qr-open aria-haspopup="dialog"
+                aria-label="Agrandir le QR code DueTrack">
+          <img src="assets/duetrak_page-qrV1.svg" alt="QR code du site DueTrack"
+              width="120" height="120" loading="lazy">
           <span>Scanner pour accéder au site</span>
         </button>
-      </div>
-
-      <!-- QR Code Modal -->
-      <div id="qr-modal" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title" hidden style="position:fixed;inset:0;z-index:1000;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.6);">
-        <div style="position:relative;width:min(100%,420px);padding:24px;border-radius:16px;background:#fff;box-shadow:0 20px 50px rgba(0,0,0,.25);">
-          <button type="button" onclick="closeQrModal()" aria-label="Fermer" style="position:absolute;top:8px;right:12px;border:0;background:transparent;font-size:28px;cursor:pointer;">&times;</button>
-          <h3 id="qr-modal-title" style="margin:0 32px 16px;text-align:center;">QR Code — DueTrack</h3>
-          <img src="assets/duetrak_page-qrV1.svg" alt="QR Code du site DueTrack" loading="lazy" style="display:block;width:min(100%,360px);height:auto;max-height:70vh;object-fit:contain;margin:0 auto;border-radius:8px;">
-          <p style="margin:16px 0 0;text-align:center;">Scannez pour accéder au site</p>
-        </div>
       </div>
 
       <div>
@@ -167,11 +159,23 @@
         <a href="https://liberapay.com/Octopi-Dev/" target="_blank" rel="noopener">Soutenir le projet</a>
       </div>
     </div>
+    
     <div class="section-shell footer-bottom">
       <span>© 2026-<span data-year></span> <a href="https://github.com/Dev-Code3D" target="_blank" rel="noopener" text-decoration="bold">Octopi Dev</a> / Assem HSSINI — Tous droits réservés.</span>
       <span>DueTrack • Version Web</span>
     </div>
   </footer>
+
+  <dialog id="qr-modal" class="qr-modal" aria-labelledby="qr-modal-title">
+    <div class="qr-modal-card">
+      <button type="button" class="qr-modal-close" data-qr-close aria-label="Fermer">×</button>
+      <h2 id="qr-modal-title">DueTrack</h2>
+      <img src="assets/duetrak_page-qrV1.svg" alt="QR code du site DueTrack">
+      <p>Scanne ce code pour ouvrir le site.</p>
+      <a class="button button-small" href="/app/">Ouvrir l'application web</a>
+    </div>
+  </dialog>
+
   <script src="script.js"></script>
 </body>
 </html>

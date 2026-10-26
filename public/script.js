@@ -46,31 +46,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Function to open and close the QR modal
+const qrModal = document.getElementById('qr-modal');
+
 function openQrModal() {
-      document.getElementById('qr-modal').classList.remove('hidden');
-      document.getElementById('qr-modal').classList.add('flex');
-      document.body.style.overflow = 'hidden';
+  if (!qrModal) return;
+  if (typeof qrModal.showModal === 'function') qrModal.showModal();
+  else qrModal.setAttribute('open', '');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeQrModal() {
-  document.getElementById('qr-modal').classList.add('hidden');
-  document.getElementById('qr-modal').classList.remove('flex');
-  document.body.style.overflow = '';
+  if (!qrModal) return;
+  if (typeof qrModal.close === 'function') qrModal.close();
+  else qrModal.removeAttribute('open');
 }
 
-// Close modal on escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeQrModal();
-  }
-});
+document.querySelectorAll('[data-qr-open]').forEach(b => b.addEventListener('click', openQrModal));
+document.querySelectorAll('[data-qr-close]').forEach(b => b.addEventListener('click', closeQrModal));
 
-// Close modal on background click
-const modalEl = document.getElementById('qr-modal');
-if (modalEl) {
-  modalEl.addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeQrModal();
-    }
-  });
+if (qrModal) {
+  qrModal.addEventListener('click', e => { if (e.target === qrModal) closeQrModal(); }); // clic sur le fond
+  qrModal.addEventListener('close', () => { document.body.style.overflow = ''; });       // aussi après Échap
 }
