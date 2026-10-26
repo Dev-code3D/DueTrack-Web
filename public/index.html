@@ -138,6 +138,17 @@
         </a>
         <p>Suivre les prêts et dettes, avec simplicité.</p>
       </div>
+
+      <!-- QR Code Modal -->
+      <div id="qr-modal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title">
+        <div class="bg-white rounded-2xl p-6 max-w-md w-full relative shadow-2xl border border-slate-200">
+          <button type="button" onclick="closeQrModal()" class="absolute top-3 right-3 text-slate-500 hover:text-slate-800 text-2xl transition" aria-label="Fermer">&times;</button>
+          <h3 id="qr-modal-title" class="text-lg font-bold text-slate-900 mb-4 text-center">QR Code - DueTrack Website</h3>
+          <img src="assets/duetrak_page-qrV1.svg" alt="QR Code du site DueTrack" loading="lazy" style="display:block;width:min(100%, 360px);height:auto;max-height:70vh;object-fit:contain;margin:0 auto;border-radius:0.5rem;">
+          <p class="text-center text-sm text-slate-600 mt-4">Scannez pour accéder au site</p>
+        </div>
+      </div>
+
       <div>
         <strong>Légales</strong>
         <a href="/conditions.html">Conditions d'utilisation</a>
